@@ -29,7 +29,7 @@ class GSAPAnimations {
         this.animateHeroSection();
         
         // Section reveals
-        this.animateSectionReveals();
+        //this.animateSectionReveals();
         
         // Process steps animation
         this.animateProcessSteps();
