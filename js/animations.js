@@ -26,7 +26,7 @@ class GSAPAnimations {
 
     setupScrollTriggers() {
         // Hero section entrance animation
-        this.animateHeroSection();
+        //this.animateHeroSection();
         
         // Section reveals
         this.animateSectionReveals();
