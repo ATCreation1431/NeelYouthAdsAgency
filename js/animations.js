@@ -60,7 +60,7 @@ class GSAPAnimations {
         const tl = gsap.timeline();
         
         // Initial state - everything hidden
-        gsap.set([".hero-badge", ".hero-title", ".hero-subtitle", ".hero-stats", ".hero-cta"], {
+        gsap.set([".hero-badge", ".hero-title", ".hero-subtitle", ".hero-cta"], { //".hero-stats",
             opacity: 0,
             y: 50
         });
