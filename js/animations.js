@@ -29,7 +29,7 @@ class GSAPAnimations {
         this.animateHeroSection();
         
         // Section reveals
-        //this.animateSectionReveals();
+        this.animateSectionReveals();
         
         // Process steps animation
         this.animateProcessSteps();
@@ -60,7 +60,7 @@ class GSAPAnimations {
         const tl = gsap.timeline();
         
         // Initial state - everything hidden
-        gsap.set([".hero-badge", ".hero-title", ".hero-subtitle", ".hero-cta"], { //".hero-stats",
+        gsap.set([".hero-badge", ".hero-title", ".hero-subtitle", ".hero-stats", ".hero-cta"], {
             opacity: 0,
             y: 50
         });
