@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DigitalBoost Agency - Transform Your Business Online</title>
+    <meta name="description"
+        content="Leading advertising agency specializing in digital marketing, 3D campaigns, and business transformation. Join thousands of successful businesses.">
+
+    <!-- External Libraries -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
+</head>
+
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="loader">
+            <div class="loader-circle"></div>
+            <p>Loading Experience...</p>
+        </div>
+    </div>
+
+    <!-- Sticky Register Button -->
+    <!-- <button class="sticky-register-btn" id="sticky-register-btn">
+        <i class="fas fa-user-plus"></i>
+        <span>Register Now</span>
+        <div class="btn-glow"></div>
+    </button> -->
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="hero-bg">
+            <div id="hero-canvas"></div>
+        </div>
+        <div class="hero-content">
+            <div class="container">
+                <div class="hero-text">
+                    <div class="hero-badge">
+                        <i class="fas fa-star"></i>
+                        <span>LIMITED TIME OFFER</span>
+                    </div>
+                    <h1 class="hero-title">
+                        Scale Your Brand with
+                        <span class="gradient-text">High-Converting Ads</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Unlock rapid growth with data-driven ad strategies tailored to your audience. We craft campaigns
+                        that don’t just get clicks —
+                        <strong>they convert, scale, and deliver real ROI.</strong>
+                    </p>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <div class="stat-number" data-count="2800">0</div>
+                            <div class="stat-label">Businesses Transformed</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number" data-count="200">0</div>
+                            <div class="stat-label">% Average Growth</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number" data-count="24">0</div>
+                            <div class="stat-label">Hours Online Support</div>
+                        </div>
+                    </div>
+                    <div class="hero-cta">
+                        <button class="cta-primary" id="hero-register-btn">
+                            <span>Secure Your FREE Spot</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                        <p class="cta-note"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- YouTube Video Section -->
+    <section id="video" class="video-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>See Our Digital Marketing Strategy in Action</h2>
+                <p>Watch this exclusive masterclass preview to understand our proven system</p>
+            </div>
+            <div class="video-container">
+                <div class="video-thumbnail" id="video-thumbnail">
+                    <img src="https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg" alt="Video Thumbnail">
+                    <div class="play-button" id="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                    <div class="video-overlay">
+                        <h3>90-Minute Digital Marketing Masterclass</h3>
+                        <p>Learn the exact strategies that helped 50,000+ businesses grow online</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="process-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Proven 3-Step Growth Formula</h2>
+                <p>A strategic system designed to help brands maximize ROI and dominate their market through
+                    performance-driven advertising.</p>
+            </div>
+            <div class="process-steps">
+                <div class="step" data-step="1">
+                    <div class="step-visual">
+                        <img src="./img/Learn.png" width="100%" alt="">
+                    </div>
+                    <div class="step-content">
+                        <div class="step-number">01</div>
+                        <h3>LEARN</h3>
+                        <h4>Understand Your Market & Ad Strategy</h4>
+                        <p>We’ll help you uncover key insights about your audience and industry, so you can craft
+                            campaigns that convert.</p>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Market Research & Audience Targeting</li>
+                            <li><i class="fas fa-check"></i> Competitor & Ad Performance Analysis</li>
+                            <li><i class="fas fa-check"></i> Platform Strategy (Meta, Google, TikTok, etc.)</li>
+                            <li><i class="fas fa-check"></i> Funnel Planning & Ad Messaging</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="step" data-step="2">
+                    <div class="step-visual">
+                        <img src="./img/Launch.png" width="100%" alt="">
+                    </div>
+                    <div class="step-content">
+                        <div class="step-number">02</div>
+                        <h3>LAUNCH</h3>
+                        <h4>Deploy High-Converting Ad Campaigns</h4>
+                        <p>Take your insights and turn them into powerful ad creatives and campaigns optimized for
+                            real-world results.</p>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Ad Creative Development</li>
+                            <li><i class="fas fa-check"></i> Media Buying & Optimization</li>
+                            <li><i class="fas fa-check"></i> Retargeting & Funnel Execution</li>
+                            <li><i class="fas fa-check"></i> Real-Time Reporting</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="step" data-step="3">
+                    <div class="step-visual">
+                        <img src="./img/Scale.png" width="100%" alt="">
+                    </div>
+                    <div class="step-content">
+                        <div class="step-number">03</div>
+                        <h3>SCALE</h3>
+                        <h4>Optimize & Expand for Long-Term Growth</h4>
+                        <p>Once your campaigns are running, we double down on what works and eliminate what doesn’t—with
+                            data leading the way.</p>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Advanced Split Testing</li>
+                            <li><i class="fas fa-check"></i> Conversion Rate Optimization (CRO)</li>
+                            <li><i class="fas fa-check"></i> Ad Spend Scaling Strategies</li>
+                            <li><i class="fas fa-check"></i> Full-Funnel Optimization</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="process-cta">
+                <button class="cta-secondary" id="process-register-btn">
+                    <span>YES, I Want To Grow My Business Online</span>
+                    <i class="fas fa-rocket"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="benefits-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Smart Business Owners Choose Digital Advertising</h2>
+                <p>The 3 biggest advantages of running ad campaigns with us</p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-bullhorn"></i>
+                    </div>
+                    <h3>Get Discovered Instantly</h3>
+                    <p>With expertly crafted campaigns, your ideal customers see your business first—whether they’re
+                        searching, scrolling, or shopping.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>24/7 Lead Generation</h3>
+                    <p>Our automation systems generate leads around the clock. No downtime. No missed opportunities.
+                        Just results—while you sleep.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-globe-americas"></i>
+                    </div>
+                    <h3>Reach Beyond Boundaries</h3>
+                    <p>Break free from your local market and connect with customers anywhere in the world—powered by
+                        strategic, scalable ad campaigns.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Curriculum Section -->
+    <section id="curriculum" class="curriculum-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Boost Your Business with Proven Ad Strategies</h2>
+                <p>Comprehensive training designed to scale your business with high-impact advertising</p>
+            </div>
+            <div class="curriculum-content">
+                <div class="curriculum-visual">
+                    <img src="./img/Strategies2.png" alt="" style="width:100%; border-radius: 12px;" />
+                </div>
+                <div class="curriculum-list">
+                    <div class="curriculum-item">
+                        <div class="curriculum-icon">
+                            <i class="fas fa-bullhorn"></i>
+                        </div>
+                        <div class="curriculum-text">
+                            <h4>High-Impact Ad Campaigns</h4>
+                            <p>Learn to craft ad campaigns that capture attention and convert clicks into customers.</p>
+                        </div>
+                    </div>
+                    <div class="curriculum-item">
+                        <div class="curriculum-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="curriculum-text">
+                            <h4>Data-Driven Optimization</h4>
+                            <p>Master the art of analyzing ad performance and making real-time improvements to maximize
+                                ROI.</p>
+                        </div>
+                    </div>
+                    <div class="curriculum-item">
+                        <div class="curriculum-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="curriculum-text">
+                            <h4>Target Audience Profiling</h4>
+                            <p>Understand how to identify and reach your ideal customers with laser-focused targeting
+                                strategies.</p>
+                        </div>
+                    </div>
+                    <div class="curriculum-item">
+                        <div class="curriculum-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <div class="curriculum-text">
+                            <h4>Scaling for Growth</h4>
+                            <p>Discover proven methods to scale your campaigns sustainably and grow your business
+                                exponentially.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="curriculum-cta">
+                <button class="cta-primary" id="curriculum-register-btn">
+                    <span>I'm Ready to Boost My Business 10x</span>
+                    <i class="fas fa-chart-line"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Success Stories From Our Community</h2>
+                <p>Real results from real businesses</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"After implementing their digital marketing strategies, our restaurant saw a 300% increase in
+                            online orders within just 2 months. The automated systems work like magic!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Sarah Johnson</h4>
+                            <p>Restaurant Owner</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"I went from struggling to find clients to having a waiting list. The lead generation system
+                            they taught me brings in 20+ qualified leads every week!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Mike Chen</h4>
+                            <p>Fitness Coach</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"Our e-commerce sales doubled in the first quarter. The conversion optimization techniques
+                            and automated email sequences are game-changers!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Emily Davis</h4>
+                            <p>E-commerce Store Owner</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Target Audience Section -->
+    <section id="audience" class="audience-section">
+        <div class="container">
+            <div class="audience-grid">
+                <div class="audience-column not-for">
+                    <h3><i class="fas fa-times-circle"></i> This is NOT for:</h3>
+                    <ul>
+                        <li>Those hesitant to embrace business growth</li>
+                        <li>People who avoid online presence completely</li>
+                        <li>Individuals not interested in boosting their earnings</li>
+                        <li>Those skeptical about the digital future</li>
+                        <li>People unwilling to learn new skills</li>
+                    </ul>
+                </div>
+                <div class="audience-column for">
+                    <h3><i class="fas fa-check-circle"></i> This IS for:</h3>
+                    <ul>
+                        <li>Ambitious business owners seeking growth</li>
+                        <li>Entrepreneurs eager to expand online</li>
+                        <li>Believers in digital as the future of business</li>
+                        <li>Business owners trusting effective marketing strategies</li>
+                        <li>Individuals aiming for multiple income streams</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="audience-cta">
+                <button class="cta-primary" id="audience-register-btn">
+                    <span>Register For FREE Masterclass</span>
+                    <i class="fas fa-graduation-cap"></i>
+                </button>
+                <p>Master Digital Marketing and Grow Your Business 10x!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-image">
+                    <div class="mentor-avatar">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <div class="about-badges">
+                        <div class="badge">TEDx Speaker</div>
+                        <div class="badge">Bestselling Author</div>
+                        <div class="badge">Certified Coach</div>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <h2>Meet Your Digital Marketing Expert</h2>
+                    <h3>Alex Rodriguez</h3>
+                    <div class="about-credentials">
+                        <p><i class="fas fa-building"></i> Founder of DigitalBoost Agency</p>
+                        <p><i class="fas fa-award"></i> Leading Digital Marketing Strategist</p>
+                    </div>
+                    <div class="about-description">
+                        <p>Alex Rodriguez is a leading digital marketing expert who has invested over $100,000 in
+                            learning from the world's best marketing mentors and coaches.</p>
+                        <p>As a certified coach with advanced training in digital marketing, Alex has conducted over 500
+                            live workshops, helping more than 35,000 business owners transform their operations and
+                            achieve digital success.</p>
+                        <p>With over 30 months of consistent results, Alex has generated over $10 million in revenue for
+                            clients and has built a community of 50,000+ successful entrepreneurs.</p>
+                        <p><strong>Mission:</strong> To help 100,000 business owners achieve financial freedom through
+                            digital marketing mastery.</p>
+                    </div>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <div class="stat-number">500+</div>
+                            <div class="stat-label">Live Workshops</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">35K+</div>
+                            <div class="stat-label">Students Trained</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">$10M+</div>
+                            <div class="stat-label">Revenue Generated</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section id="final-cta" class="final-cta-section">
+        <div class="container">
+            <div class="final-cta-content">
+                <h2>Ready to Skyrocket Your Business Growth?</h2>
+                <p>Join our exclusive masterclass and learn the proven strategies that have helped thousands of
+                    entrepreneurs double their online revenue fast.</p>
+                <div class="urgency-elements">
+                    <div class="timer" id="countdown-timer">
+                        <div class="timer-segment">
+                            <span class="timer-number" id="hours">00</span>
+                            <span class="timer-label">Hours</span>
+                        </div>
+                        <div class="timer-segment">
+                            <span class="timer-number" id="minutes">00</span>
+                            <span class="timer-label">Minutes</span>
+                        </div>
+                        <div class="timer-segment">
+                            <span class="timer-number" id="seconds">00</span>
+                            <span class="timer-label">Seconds</span>
+                        </div>
+                    </div>
+                    <p class="urgency-text">⚡ Only <span id="final-spots-left">47</span> spots left — claim yours before
+                        they're gone!</p>
+                </div>
+                <button class="cta-final" id="final-register-btn">
+                    <span>Get discounted service now</span>
+                    <i class="fas fa-lock"></i>
+                </button>
+                <div class="guarantee">
+                    <i class="fas fa-shield-alt"></i>
+                    <p>100% Risk-Free • Expert Support Around the Clock</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ads Agency Registration Modal -->
+    <div id="registration-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>🚀 Boost Your Brand with Expert Ads</h3>
+                <button class="modal-close" id="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-benefits">
+                    <h4>Claim Your FREE Ads Strategy Session:</h4>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Customized ad campaign audit</li>
+                        <li><i class="fas fa-check"></i> Expert tips to increase ROI</li>
+                        <li><i class="fas fa-check"></i> Proven ad targeting techniques</li>
+                        <li><i class="fas fa-check"></i> Access to exclusive ad creative templates</li>
+                        <li><i class="fas fa-check"></i> Direct Q&A with our ad specialists</li>
+                    </ul>
+                </div>
+                <form id="registration-form" class="registration-form">
+                    <div class="form-group">
+                        <label for="fullName">Full Name *</label>
+                        <input type="text" id="fullName" name="fullName" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+1 234 567 8901" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="businessType">Industry</label>
+                        <select id="businessType" name="businessType">
+                            <option value="" disabled selected>Select your industry</option>
+                            <option value="ecommerce">E-commerce</option>
+                            <option value="local_business">Local Business</option>
+                            <option value="technology">Technology</option>
+                            <option value="healthcare">Healthcare</option>
+                            <option value="education">Education</option>
+                            <option value="finance">Finance</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="adExperience">Current Advertising Experience</label>
+                        <select id="adExperience" name="adExperience">
+                            <option value="" disabled selected>Select your experience</option>
+                            <option value="none">No experience</option>
+                            <option value="basic">Basic</option>
+                            <option value="moderate">Moderate</option>
+                            <option value="advanced">Advanced</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="form-submit-btn">
+                        <span>Get My Free Strategy</span>
+                        <i class="fas fa-bullhorn"></i>
+                    </button>
+                </form>
+                <div class="form-footer">
+                    <p><i class="fas fa-lock"></i> Your details are safe and confidential.</p>
+                    <p><i class="fas fa-clock"></i> Limited slots available – don’t miss out!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="success-modal" class="modal">
+        <div class="modal-content success-content">
+            <div class="success-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h3>🎉 Registration Successful!</h3>
+            <p>Congratulations! Your spot is secured for the FREE Digital Marketing Masterclass.</p>
+            <div class="success-details">
+                <div class="success-item">
+                    <i class="fas fa-calendar"></i>
+                    <span>Check your email for the masterclass link and schedule</span>
+                </div>
+                <div class="success-item">
+                    <i class="fas fa-mobile-alt"></i>
+                    <span>You'll receive SMS reminders before the session</span>
+                </div>
+                <div class="success-item">
+                    <i class="fas fa-download"></i>
+                    <span>Access your pre-session resources in the welcome email</span>
+                </div>
+            </div>
+            <button class="success-close-btn" id="success-close">
+                <span>Got It!</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Video Modal -->
+    <div id="video-modal" class="modal video-modal">
+        <div class="video-modal-content">
+            <button class="modal-close" id="video-close">&times;</button>
+            <div class="video-iframe-container">
+                <iframe id="video-iframe" src="" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/animations.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
