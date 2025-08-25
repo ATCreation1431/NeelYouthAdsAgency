@@ -4,7 +4,7 @@ class GSAPAnimations {
         this.init();
         this.setupScrollTriggers();
         this.setupTextAnimations();
-        this.setupInteractiveAnimations();
+        // this.setupInteractiveAnimations();
         // this.setupTimelineAnimations();
     }
 

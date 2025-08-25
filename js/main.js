@@ -41,7 +41,10 @@ class DigitalBoostApp {
             'process-register-btn',
             'curriculum-register-btn',
             'audience-register-btn',
-            'final-register-btn'
+            'final-register-btn',
+            'rgBtn1',
+            'rgBtn2',
+            'rgBtn3'
         ];
 
         registerButtons.forEach(btnId => {
